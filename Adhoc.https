@@ -1,0 +1,63 @@
+###
+POST http://127.0.0.1:8000/signup/
+Content-Type: application/json
+
+{
+    "username": "akhil",
+    "email": "akhil@example.com",
+    "password": "notsosecurepassword"
+}
+
+###
+GET http://127.0.0.1:8000/signup/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/trips/
+Content-Type: application/json
+Authorization: basic shashi:notsosecurepassword
+
+{
+    "title": "college Trip",
+    "start_date": "2023-10-11",
+    "destination": "kakkanad junction",
+    "created_by": 10
+}
+
+###
+GET http://127.0.0.1:8000/trips
+Accept: application/json
+Authorization: basic shashi:notsosecurepassword
+
+###
+POST http://127.0.0.1:8000/trips/
+Content-Type: application/json
+Authorization: basic akhil:notsosecurepassword
+
+{
+    "title": "test",
+    "start_date": "2023-10-11",
+    "destination": "vazhakala junction",
+    "created_by": 1
+}
+
+###
+GET http://127.0.0.1:8000/crud/4/
+Accept: application/json
+Authorization: basic akhil:notsosecurepassword
+
+###
+PUT http://127.0.0.1:8000/crud/
+Content-Type: application/json
+Authorization: basic shashi:notsosecurepassword
+
+{
+    "title": "school Trip",
+    "start_date": "2023-10-11",
+    "destination": "goa junction",
+    "created_by": 1
+}
+
+###
+DELETE http://127.0.0.1:8000/crud/4/
+Authorization: basic akhil:notsosecurepassword
